@@ -1,0 +1,63 @@
+intents:
+  - greet
+  - askinfo
+  - name_entry
+  - phone_entry
+  - email_entry
+
+
+entities:
+  - name
+  - phone_num
+  - email
+
+slots:
+  name:
+    type: unfeaturized
+    auto_fill: false
+  phone_num:
+    type: unfeaturized
+    auto_fill: false
+  email:
+    type: unfeaturized
+    auto_fill: false
+
+
+
+actions:
+  - greet
+  - askinfo
+  - name_entry
+  - phone_entry
+  - email_entry
+
+responses:
+  utter_greet:
+    - text: "Hey! Info bot welcomes you.How can I help?"
+
+  utter_ask_name:
+   - text: "please tell your good name."
+
+  utter_ask_phone_num:
+   - text: " Can you please provide your number."
+
+  utter_ask_email:
+   - text: "please tell your email-address."
+
+  utter_submit:
+   - text: "wohoo! its done"
+
+  utter_slots_values:
+   - text: "I need your information for processing your request
+            - name: {name} \n    
+            - phone number: {phone_num} \n
+            - email address: {email} "
+
+  utter_info:
+   - text: "Sure.Please tell me your following details"
+
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
